@@ -1,0 +1,99 @@
+{
+  "id": 13,
+  "type": "dalvany-image-panel",
+  "title": "Codescene",
+  "gridPos": {
+    "x": 0,
+    "y": 41,
+    "h": 4,
+    "w": 24
+  },
+  "fieldConfig": {
+    "defaults": {},
+    "overrides": []
+  },
+  "pluginVersion": "4.0.0",
+  "targets": [
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Dashboard --"
+      },
+      "refId": "A",
+      "panelId": 3
+    }
+  ],
+  "datasource": {
+    "uid": "-- Dashboard --",
+    "type": "datasource"
+  },
+  "options": {
+    "icon_field": "",
+    "autofit": false,
+    "width": "75",
+    "height": "75",
+    "singleFill": true,
+    "alt_field": "",
+    "shared_cross_hair": {
+      "backgroundColor": "#FFFFFF10",
+      "borderColor": "#FFFFFF20"
+    },
+    "slideshow": {
+      "enable": false,
+      "duration": 5000,
+      "transition": "Slide",
+      "transition_duration": 1000,
+      "pauseOnHover": true,
+      "infinite": true
+    },
+    "tooltip": false,
+    "tooltip_include_field": true,
+    "tooltip_field": "",
+    "tooltip_include_date": false,
+    "tooltip_date_elapsed": false,
+    "open_url": {
+      "enable": false,
+      "open_in_tab": true,
+      "base_url": "",
+      "metric_field": "",
+      "suffix": ""
+    },
+    "overlay": {
+      "field": "",
+      "position": "Top right",
+      "width": {
+        "size": 5,
+        "unit": "%"
+      },
+      "height": {
+        "size": 5,
+        "unit": "%"
+      },
+      "bindings": {
+        "bindings": [],
+        "unbounded": "#66666620",
+        "has_text": true
+      }
+    },
+    "underline": {
+      "field": "",
+      "text_size": "14",
+      "text_align": "left",
+      "bindings_field": "",
+      "bindings": {
+        "bindings": [],
+        "unbounded": "#CCCCDCFF",
+        "has_text": true
+      }
+    },
+    "baseUrl": "https://codescene.io",
+    "fallback": "https://codescene.io/images/analyzed-by-codescene-badge.svg",
+    "suffix": "/images/analyzed-by-codescene-badge.svg"
+  },
+  "links": [
+    {
+      "title": "Powered by Codescene",
+      "url": "https://codescene.io/images/analyzed-by-codescene-badge.svg"
+    }
+  ]
+}
