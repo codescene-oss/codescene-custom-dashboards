@@ -1,0 +1,1192 @@
+{
+  "__inputs": [
+    {
+      "name": "DS_CODESCENE.IO_- INFINITY",
+      "label": "CodeScene.io - Infinity",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "yesoreyeram-infinity-datasource",
+      "pluginName": "Infinity"
+    }
+  ],
+  "__elements": {},
+  "__requires": [
+    {
+      "type": "panel",
+      "id": "barchart",
+      "name": "Bar chart",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "dalvany-image-panel",
+      "name": "Dynamic image panel",
+      "version": "4.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "gauge",
+      "name": "Gauge",
+      "version": ""
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "11.3.0+security-01"
+    },
+    {
+      "type": "datasource",
+      "id": "yesoreyeram-infinity-datasource",
+      "name": "Infinity",
+      "version": "2.11.4"
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "${DS_CODESCENE.IO_- INFINITY}"
+      },
+      "description": "Hotspot Code Health",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 10,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "text",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0
+              },
+              {
+                "color": "dark-orange",
+                "value": 4
+              },
+              {
+                "color": "#EAB839",
+                "value": 6
+              },
+              {
+                "color": "light-green",
+                "value": 8
+              },
+              {
+                "color": "dark-green",
+                "value": 9
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Active Devs"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "semi-dark-blue",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 3,
+      "links": [
+        {
+          "targetBlank": true,
+          "title": "Codescene project 1",
+          "url": "https://codescene.io/projects/<project_id_1>"
+        }
+      ],
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "sizing": "auto"
+      },
+      "pluginVersion": "11.3.0+security-01",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "high_level_metrics.hotspots_code_health_now_weighted_average",
+              "text": "Now",
+              "type": "number"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "${DS_CODESCENE.IO_- INFINITY}"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://api.codescene.io/v2/projects/<project_id_1>/analyses/latest",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Project 1 Hotspots Code Health (weighted average))",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "${DS_CODESCENE.IO_- INFINITY}"
+      },
+      "description": "Hotspot Code Health for Kong",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 10,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "text",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0
+              },
+              {
+                "color": "dark-orange",
+                "value": 4
+              },
+              {
+                "color": "#EAB839",
+                "value": 7
+              },
+              {
+                "color": "light-green",
+                "value": 8.5
+              },
+              {
+                "color": "dark-green",
+                "value": 9
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Active Devs"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "semi-dark-blue",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "id": 4,
+      "links": [
+        {
+          "targetBlank": true,
+          "title": "Codescene project 1",
+          "url": "https://codescene.io/projects/<project_id_1>"
+        }
+      ],
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "sizing": "auto"
+      },
+      "pluginVersion": "11.3.0+security-01",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "high_level_metrics.hotspots_code_health_now_weighted_average",
+              "text": "Now",
+              "type": "number"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "${DS_CODESCENE.IO_- INFINITY}"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://api.codescene.io/v2/projects/<project_id_2>/analyses/latest",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Project 2 Hotspots Code Health (weighted average))",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "${DS_CODESCENE.IO_- INFINITY}"
+      },
+      "description": "Code Health for project 1",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 10,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "text",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0
+              },
+              {
+                "color": "dark-orange",
+                "value": 4
+              },
+              {
+                "color": "#EAB839",
+                "value": 6
+              },
+              {
+                "color": "light-green",
+                "value": 8
+              },
+              {
+                "color": "dark-green",
+                "value": 9
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Active Devs"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "semi-dark-blue",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 8
+      },
+      "id": 1,
+      "links": [
+        {
+          "targetBlank": true,
+          "title": "Codescene project 1",
+          "url": "https://codescene.io/projects/<project_id_1>"
+        }
+      ],
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "sizing": "auto"
+      },
+      "pluginVersion": "11.3.0+security-01",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "high_level_metrics.active_developers",
+              "text": "Active Devs",
+              "type": "number"
+            },
+            {
+              "selector": "high_level_metrics.code_health_weighted_average_last_month",
+              "text": "Average last month",
+              "type": "number"
+            },
+            {
+              "selector": "high_level_metrics.code_health_weighted_average_last_year",
+              "text": "Average last year",
+              "type": "number"
+            },
+            {
+              "selector": "high_level_metrics.code_health_weighted_average_current",
+              "text": "Average current",
+              "type": "number"
+            },
+            {
+              "selector": "high_level_metrics.month_score",
+              "text": "This Month",
+              "type": "number"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "${DS_CODESCENE.IO_- INFINITY}"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://api.codescene.io/v2/projects/<project_id_1>/analyses/latest",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Project 1 Status (Devs and Code Health)",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "${DS_CODESCENE.IO_- INFINITY}"
+      },
+      "description": "Code Health for project 1",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 10,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "text",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0
+              },
+              {
+                "color": "dark-orange",
+                "value": 4
+              },
+              {
+                "color": "#EAB839",
+                "value": 6
+              },
+              {
+                "color": "light-green",
+                "value": 8
+              },
+              {
+                "color": "dark-green",
+                "value": 9
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Active Devs"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "semi-dark-blue",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      },
+      "id": 2,
+      "links": [
+        {
+          "targetBlank": true,
+          "title": "Codescene project 1",
+          "url": "https://codescene.io/projects/<project_id_1>"
+        }
+      ],
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "sizing": "auto"
+      },
+      "pluginVersion": "11.3.0+security-01",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "high_level_metrics.active_developers",
+              "text": "Active Devs",
+              "type": "number"
+            },
+            {
+              "selector": "high_level_metrics.code_health_weighted_average_last_month",
+              "text": "Average last month",
+              "type": "number"
+            },
+            {
+              "selector": "high_level_metrics.code_health_weighted_average_last_year",
+              "text": "Average last year",
+              "type": "number"
+            },
+            {
+              "selector": "high_level_metrics.code_health_weighted_average_current",
+              "text": "Average current",
+              "type": "number"
+            },
+            {
+              "selector": "high_level_metrics.month_score",
+              "text": "This Month",
+              "type": "number"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "${DS_CODESCENE.IO_- INFINITY}"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://api.codescene.io/v2/projects/<project_id_2>/analyses/latest",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Project 2 Status (Devs and Code Health)",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Dashboard --"
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 12,
+        "x": 0,
+        "y": 16
+      },
+      "id": 11,
+      "links": [
+        {
+          "title": "Code Health",
+          "url": "https://codescene.io/projects/<project_id_1>/status-badges/code-health"
+        },
+        {
+          "title": "",
+          "url": "https://codescene.io/projects/<project_id_1>/status-badges/system-mastery"
+        }
+      ],
+      "options": {
+        "alt_field": "",
+        "autofit": false,
+        "baseUrl": "https://codescene.io",
+        "fallback": "https://codescene.io/projects/<project_id_1>/status-badges/system-mastery",
+        "height": "75",
+        "icon_field": "",
+        "open_url": {
+          "base_url": "",
+          "enable": false,
+          "metric_field": "",
+          "open_in_tab": true,
+          "suffix": ""
+        },
+        "overlay": {
+          "bindings": {
+            "bindings": [],
+            "has_text": true,
+            "unbounded": "#66666620"
+          },
+          "field": "",
+          "height": {
+            "size": 5,
+            "unit": "%"
+          },
+          "position": "Top right",
+          "width": {
+            "size": 5,
+            "unit": "%"
+          }
+        },
+        "shared_cross_hair": {
+          "backgroundColor": "#FFFFFF10",
+          "borderColor": "#FFFFFF20"
+        },
+        "singleFill": true,
+        "slideshow": {
+          "duration": 5000,
+          "enable": false,
+          "infinite": true,
+          "pauseOnHover": true,
+          "transition": "Slide",
+          "transition_duration": 1000
+        },
+        "suffix": "/projects/<project_id_1>/status-badges/code-health",
+        "tooltip": false,
+        "tooltip_date_elapsed": false,
+        "tooltip_field": "",
+        "tooltip_include_date": false,
+        "tooltip_include_field": true,
+        "underline": {
+          "bindings": {
+            "bindings": [],
+            "has_text": true,
+            "unbounded": "#CCCCDCFF"
+          },
+          "bindings_field": "",
+          "field": "",
+          "text_align": "left",
+          "text_size": "14"
+        },
+        "width": "150"
+      },
+      "pluginVersion": "4.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "-- Dashboard --"
+          },
+          "panelId": 3,
+          "refId": "mastery"
+        }
+      ],
+      "title": "project_1 ",
+      "type": "dalvany-image-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Dashboard --"
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 12,
+        "x": 12,
+        "y": 16
+      },
+      "id": 12,
+      "links": [
+        {
+          "title": "Code Health",
+          "url": "https://codescene.io/projects/<project_id_2>/status-badges/system-mastery"
+        }
+      ],
+      "options": {
+        "alt_field": "",
+        "autofit": false,
+        "baseUrl": "https://codescene.io",
+        "fallback": "https://codescene.io/projects/<project_id_2>/status-badges/system-mastery",
+        "height": "75",
+        "icon_field": "",
+        "open_url": {
+          "base_url": "",
+          "enable": false,
+          "metric_field": "",
+          "open_in_tab": true,
+          "suffix": ""
+        },
+        "overlay": {
+          "bindings": {
+            "bindings": [],
+            "has_text": true,
+            "unbounded": "#66666620"
+          },
+          "field": "",
+          "height": {
+            "size": 5,
+            "unit": "%"
+          },
+          "position": "Top right",
+          "width": {
+            "size": 5,
+            "unit": "%"
+          }
+        },
+        "shared_cross_hair": {
+          "backgroundColor": "#FFFFFF10",
+          "borderColor": "#FFFFFF20"
+        },
+        "singleFill": true,
+        "slideshow": {
+          "duration": 5000,
+          "enable": false,
+          "infinite": true,
+          "pauseOnHover": true,
+          "transition": "Slide",
+          "transition_duration": 1000
+        },
+        "suffix": "/projects/<project_id_2>/status-badges/system-mastery",
+        "tooltip": false,
+        "tooltip_date_elapsed": false,
+        "tooltip_field": "",
+        "tooltip_include_date": false,
+        "tooltip_include_field": true,
+        "underline": {
+          "bindings": {
+            "bindings": [],
+            "has_text": true,
+            "unbounded": "#CCCCDCFF"
+          },
+          "bindings_field": "",
+          "field": "",
+          "text_align": "left",
+          "text_size": "14"
+        },
+        "width": "150"
+      },
+      "pluginVersion": "4.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "-- Dashboard --"
+          },
+          "panelId": 3,
+          "refId": "mastery"
+        }
+      ],
+      "title": "Project 2 ",
+      "type": "dalvany-image-panel"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "${DS_CODESCENE.IO_- INFINITY}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-red",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 4
+              },
+              {
+                "color": "dark-yellow",
+                "value": 6
+              },
+              {
+                "color": "light-green",
+                "value": 8
+              },
+              {
+                "color": "semi-dark-green",
+                "value": 9
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 20
+      },
+      "id": 5,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.73,
+        "fullHighlight": false,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "auto",
+        "showValue": "auto",
+        "stacking": "none",
+        "text": {
+          "valueSize": 14
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "pluginVersion": "11.3.0+security-01",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "date",
+              "text": "Date",
+              "type": "timestamp"
+            },
+            {
+              "selector": "kpi",
+              "text": "Health Score",
+              "type": "number"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "${DS_CODESCENE.IO_- INFINITY}"
+          },
+          "filters": [],
+          "format": "timeseries",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://api.codescene.io/v2/projects/<project_id_1>/kpi-trend/code-health/hotspots",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Hotspot Code Health Trend (project_id_1)",
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "${DS_CODESCENE.IO_- INFINITY}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "line"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-red",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 4
+              },
+              {
+                "color": "dark-yellow",
+                "value": 6
+              },
+              {
+                "color": "light-green",
+                "value": 8
+              },
+              {
+                "color": "dark-green",
+                "value": 9
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 20
+      },
+      "id": 10,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.73,
+        "fullHighlight": false,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "auto",
+        "showValue": "auto",
+        "stacking": "none",
+        "text": {
+          "valueSize": 14
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "pluginVersion": "11.3.0+security-01",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "date",
+              "text": "Date",
+              "type": "timestamp"
+            },
+            {
+              "selector": "kpi",
+              "text": "Health Score",
+              "type": "number"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "${DS_CODESCENE.IO_- INFINITY}"
+          },
+          "filters": [],
+          "format": "timeseries",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://api.codescene.io/v2/projects/<project_id_2>/kpi-trend/code-health/hotspots",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Hotspot Code Health Trend (project_id_2)",
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "${DS_CODESCENE.IO_- INFINITY}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "Percentage (%)",
+            "axisPlacement": "left",
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "text",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 10
+              },
+              {
+                "color": "dark-yellow",
+                "value": 20
+              },
+              {
+                "color": "dark-orange",
+                "value": 40
+              },
+              {
+                "color": "dark-red",
+                "value": 60
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 13,
+        "w": 24,
+        "x": 0,
+        "y": 28
+      },
+      "id": 8,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.6,
+        "fullHighlight": false,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "auto",
+        "showValue": "auto",
+        "stacking": "none",
+        "text": {},
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xField": "Date",
+        "xTickLabelRotation": -45,
+        "xTickLabelSpacing": 100
+      },
+      "pluginVersion": "11.3.0+security-01",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "date",
+              "text": "Date",
+              "type": "timestamp"
+            },
+            {
+              "selector": "kpi",
+              "text": "Work",
+              "type": "number"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "${DS_CODESCENE.IO_- INFINITY}"
+          },
+          "filters": [],
+          "format": "timeseries",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://api.codescene.io/v2/projects/<project_id_1>/kpi-trend/delivery/unplanned-work",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Unplanned Work Trend (project_id_1)",
+      "type": "barchart"
+    }
+  ],
+  "schemaVersion": 40,
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Codescene Grafana",
+  "uid": "fe3m78a0wnshsb",
+  "version": 10,
+  "weekStart": ""
+}
