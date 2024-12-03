@@ -85,4 +85,7 @@ Object
             1. Light Green 8  
             1. Yellow 6  
             1. Orange 4  
-            1. Red 0   
+            1. Red 0
+            
+The new Gauge visualisation should look like this: 
+![alt text](https://github.com/codescene-oss/codescene-custom-dashboards/blob/main/Single_Gauge_Health.png) "Single Gauge Health"
