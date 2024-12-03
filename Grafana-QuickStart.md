@@ -1,11 +1,11 @@
 # Grafana
 Displaying CS data in Grafana is relatively straightforward. Codescene APIs return easy-to-parse JSON, which generally works well, as Grafana.
 ## Assumptions
-Cloud Grafana and Cloud Codescene
-Familiarity with Codescene APIs [Codescene API Documentation](https://codescene.io/docs/integrations/rest-api.html)
-Admin rights to install two plugins: 
-  * Dynamic image panel: Concatenate a metric to an URL in order to display an image
-  * [Infinity Datasource Plugin](https://grafana.com/grafana/plugins/yesoreyeram-infinity-datasource/) :JSON API, CSV, TSV, XML, GraphQL, HTML, Google Sheets and HTTP/REST API datasource for Grafana. Do infinite things with Grafana. Transform data with UQL/GROQ. Visualize data from many APIs including Amazon AWS, Microsoft Azure, Google Cloud / GCP and RSS/ATOM feeds directly. 
+  * Cloud Grafana and Cloud Codescene
+  * Familiarity with Codescene APIs [Codescene API Documentation](https://codescene.io/docs/integrations/rest-api.html)
+  * Admin rights to install two plugins: 
+   1. Dynamic image panel: Concatenate a metric to an URL in order to display an image
+   1. [Infinity Datasource Plugin](https://grafana.com/grafana/plugins/yesoreyeram-infinity-datasource/) :JSON API, CSV, TSV, XML, GraphQL, HTML, Google Sheets and HTTP/REST API datasource for Grafana. Do infinite things with Grafana. Transform data with UQL/GROQ. Visualize data from many APIs including Amazon AWS, Microsoft Azure, Google Cloud / GCP and RSS/ATOM feeds directly. 
 ## Quick Setup
 1. Install Infinity Plugin for Grafana   
 2. Create a data connection between Grafana and Codescene  
