@@ -72,9 +72,9 @@ Object
 ```
 7. Return to *Parsing options*  
       1. Choose *Add Columns*  
-        1. **Selector**: high\_level\_metrics.hotspots\_code\_health\_now\_weighted\_average  
-        1. **As**: Now  
-        1. **Format as**: Number  
+        1. **Selector**: `high\_level\_metrics.hotspots\_code\_health\_now\_weighted\_average`  
+        1. **As**: `Now`  
+        1. **Format as**: `Number`  
       1. Save  
 8. : Customise the Gauge visualisation (*Optional*)  
       1. In Panel Options, add a **Title** and a **Description**  
