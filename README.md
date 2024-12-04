@@ -5,9 +5,11 @@
 CodeScene comes with its own UI, but sometimes you'd like to extract some key metrics and visualize them in your own business portal.
 For that purpose, CodeScene offers a REST API which allows you to extract any metric or trend.
 
-This repository provides an example on how to [visualize CodeScene data in Grafana](Grafana-QuickStart.md).
+This repository provides an example on how to [visualize CodeScene data in Grafana](Grafana-QuickStart.md). Check it out 👍
 
 ## Examples on a custom dashboard
+
+The following examples are created via the [Grafana quick start guide](Grafana-QuickStart.md).
 
 ### Visualize trends in unplanned work
 
