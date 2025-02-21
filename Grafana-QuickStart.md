@@ -14,7 +14,7 @@ Displaying CS data in Grafana is relatively straightforward. Codescene APIs retu
 5. Customise visualisation look and feel
 ## Detailed Setup
 Grafana data setups are standard across most connections. It requires a secure data connection and a call to an API. What is returned is parsed and displayed.
-1. The easiest way to parse JSON in Grafana is to use a plugin. Infinity is a powerful and flexible tool to parse JSON, XML, and REST APIs. It also provides a powerful UQL editor to create customised queries. More information is available here: [https://grafana.com/grafana/plugins/yesoreyeram-infinity-datasource/](Infinity Datasource Plugin)
+1. The easiest way to parse JSON in Grafana is to use a plugin. Infinity is a powerful and flexible tool to parse JSON, XML, and REST APIs. It also provides a powerful UQL editor to create customised queries. More information is available here: [Infinity Datasource Plugin](https://grafana.com/grafana/plugins/yesoreyeram-infinity-datasource/)
 2. Create a Bearer Token in Codescene. A REST API token can be created under the main Configuration menu item. Add a new token and copy the token to a secure location. Choose *Read privileges*. Make sure to copy it because you cannot see it again later. Note the CodeScene project number you intend to query (visible in the Codescene URL when you click on a Project Dashboard).
 3. Create a new Infinity data source in Grafana. Someone with admin rights needs to set up both CodeScene and Grafana. Name it ***CodeScene.io \- Infinity***
     1. Test the query from a command line
